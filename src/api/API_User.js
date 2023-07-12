@@ -39,7 +39,7 @@ export function logout() {
   removeUser();
 }
 
-export function updateProfile(user, selectedImage) {
+export function updateProfile(user, selectedImage,history) {
   var formData = new FormData();
   formData.append("name", user.name);
   formData.append("email", user.email);
@@ -49,6 +49,10 @@ export function updateProfile(user, selectedImage) {
     url: `${Master_URL_API_User}update?token=${getToken()}`,
     headers: { "Content-Type": "multipart/form-data" },
     data: formData,
+  }).then((response) => {
+    if (response.data.status == 201) {
+      history.goBack();
+    }
   });
   getUserData();
 }

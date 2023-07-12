@@ -19,7 +19,7 @@ function PostDetailsLayout(props) {
         <div className="flex-2 flex items-center">
           {post.image ? (
             <img
-              src={"http://127.0.0.1:8000/storage/" + post.image}
+              src={"https://coursespec.000webhostapp.com/storage/" + post.image}
               className="w-full h-96 object-cover"
             />
           ) : (

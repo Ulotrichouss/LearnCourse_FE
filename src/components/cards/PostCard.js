@@ -35,7 +35,7 @@ function PostCard(props) {
         {props.data.filePath && (
           <Link to={`forum/${props.data.postId}`}>
             <img
-              src={`http://127.0.0.1:8000/storage/${props.data.filePath}`}
+              src={`https://coursespec.000webhostapp.com/storage/${props.data.filePath}`}
               className="border w-full max-h-96 object-cover"
             />
           </Link>
@@ -43,7 +43,6 @@ function PostCard(props) {
       </div>
       <div className="flex space-x-5 justify-between items-center">
         <p className="text-gray-600 w-full truncate">
-          <span className="font-medium">{props.data.authorName}</span>{" "}
           {props.data.content}
         </p>
         <Link to={`forum/${props.data.postId}`}>

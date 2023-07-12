@@ -7,7 +7,7 @@ function EnrolledList(props) {
     formData.append("courseId", props.courseId);
     axios({
       method: "POST",
-      url: "http://localhost:8000/api/enrolled-list",
+      url: "https://coursespec.000webhostapp.com/api/enrolled-list",
       headers: { "Content-Type": "multipart/form-data" },
       data: formData,
     }).then((response) => {

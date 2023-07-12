@@ -29,6 +29,12 @@ body {
     opacity: 1;
   }
 }
+.object-cover {
+  object-fit:contain;
+}
+.font-color {
+  color:#e20000;
+}
 
 .comment:hover .button {
   display: block;

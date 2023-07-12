@@ -20,7 +20,7 @@ function CommentCard(props) {
         <span className="text-gray-600">{" " + props.data.content}</span>
         {props.data.image ? (
           <img
-            src={"http://localhost:8000/storage/" + props.data.image}
+            src={"https://coursespec.000webhostapp.com/storage/" + props.data.image}
             className="border w-44 h-44 object-cover"
           />
         ) : (

@@ -19,7 +19,7 @@ function Profile(props) {
     <div className="container m-auto mt-5 px-24 divide-y">
       <div className="flex p-5 space-x-10">
         <img
-          src={`http://localhost:8000/${user.avatar}`}
+          src={`https://coursespec.000webhostapp.com/storage/${user.avatar}`}
           className="w-40 h-40 object-cover rounded-full"
         />
         <div className="space-y-3">

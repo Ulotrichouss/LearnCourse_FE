@@ -10,7 +10,7 @@ function CourseCard(props) {
   return (
     <div className="relative group">
       <img
-        src={"http://localhost:8000/storage/" + props.data.courseCover}
+        src={"https://coursespec.000webhostapp.com/storage/" + props.data.courseCover}
         className="h-44 w-full object-cover overflow-hidden rounded-3xl shadow group-hover:shadow-sm"
       />
       <div className="absolute -top-5 right-5 bg-green-400 text-white rounded-3xl shadow-md">
