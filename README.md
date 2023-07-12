@@ -1,11 +1,11 @@
 # Account Login app 
 
 Admin: admin@gmail.com
-
-Teacher: hoang@gmail.com    trung@gmail.com     linh@gmail.com      van@gmail.com
-
+-------------------------------------------------------------------
+Teacher: hoang@gmail.com  | trung@gmail.com  | linh@gmail.com  | van@gmail.com
+-------------------------------------------------------------------
 Student: hocvien@gmail.com
-
+-------------------------------------------------------------------
 Password: 123456
 
 # Getting Started with Create React App
