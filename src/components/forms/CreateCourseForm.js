@@ -68,9 +68,7 @@ function CreateCourseForm() {
             ></textarea>
             {errors.introduction && <ErrorText text={errors.introduction} />}
           </div>
-          <div className="grid grid-cols-1 gap-1">  
-            <label className="text-sm text-gray-500">Skill</label>
-            {skill.length > 0 && <Autocomplete skill={skill} />}
+          {/* <div className="grid grid-cols-1 gap-1">  
             {/* <select className="p-2 bg-gray-100 border rounded-md" multiple>
               {skill.length > 0 &&
                 skill.map((item, index) => {
@@ -78,7 +76,6 @@ function CreateCourseForm() {
                 })}
             </select>
             {errors.introduction && <ErrorText text={errors.introduction} />} */}
-          </div>
         </div>
       </div>
       <div className="pt-5 flex space-x-10">
