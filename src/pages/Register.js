@@ -13,7 +13,7 @@ function Register() {
     } else {
       axios({
         method: "post",
-        url: "http://127.0.0.1:8000/api/auth/register",
+        url: "https://coursespec.000webhostapp.com/api/auth/register",
         headers: { "Content-Type": "application/json" },
         data: {
           name: name,

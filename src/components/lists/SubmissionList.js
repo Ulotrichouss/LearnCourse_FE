@@ -49,7 +49,7 @@ function SubmissionList(props) {
                   <td>
                     <a
                       href={
-                        "http://127.0.0.1:8000/api/submission/download/" +
+                        "https://coursespec.000webhostapp.com/api/submission/download/" +
                         item.submissionId
                       }
                       className="hover:underline"

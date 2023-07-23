@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Tab } from "@headlessui/react";
 import {
   AcademicCapIcon,
@@ -11,9 +11,6 @@ import CourseInfo from "../components/CourseInfo";
 import AssignmentList from "../components/lists/AssignmentList";
 import { isTeacher } from "../api/Session";
 import MaterialList from "../components/lists/MaterialList";
-import ReactPlayer from "react-player";
-import { getCourseInfo } from "../api/API_Courses";
-import UserAvatar from "../components/UserAvatar";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -21,50 +18,15 @@ function classNames(...classes) {
 
 function CourseDetail(props) {
   const courseId = props.match.params.id;
-  const [course, setCourse] = useState([]);
-  useEffect(() => {
-    getCourseInfo(courseId, setCourse);
-  }, []);
   return (
     <>
       <div className="container m-auto mt-5">
         <div className="flex flex-wrap">
-          <div className="w-full">
-            <div className="bg-green-400 p-3 rounded">
-              <p className="text-3xl font-bold text-white">
-                {course.courseTitle}
-              </p>
-              <p className="text-xl text-white">{course.courseIntroduction}</p>
-              <div className="flex items-center">
-                <UserAvatar link={course.teacherAvatar} />
-                <Link
-                  to={`/profile/${course.teacherId}`}
-                  className="text-gray-500 text-lg font-medium"
-                >
-                  {course.teacherName}
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="absolute right-20">
-            <div className="m-5 bg-white border rounded-xl drop-shadow-xl">
-              <ReactPlayer
-                url="https://www.youtube.com/watch?v=uMQnn8xU7qs&ab_channel=SyedZano"
-                width="450px"
-                height="250px"
-                controls={true}
-              />
-              <CourseInfo id={courseId} full={false} />
-            </div>
-          </div>
-          <div className="w-2/3">
-            <div>
-              <div className="my-5">
-
-              </div>
+          <div className="w-full lg:w-2/3 order-2 lg:order-1">
+            <div className="p-5">
               <Tab.Group>
                 <Tab.List>
-                  <div className="flex justify-between">
+                  <div className="px-5 lg:px-10 flex justify-between">
                     <Tab
                       className={({ selected }) =>
                         classNames(
@@ -90,7 +52,7 @@ function CourseDetail(props) {
                   </div>
                 </Tab.List>
                 <Tab.Panels>
-                  <Tab.Panel className="mt-5">
+                  <Tab.Panel className="mt-5 px-10">
                     {isTeacher() && (
                       <Link
                         to={"/assignment/create/" + courseId}
@@ -102,7 +64,7 @@ function CourseDetail(props) {
                     )}
                     <AssignmentList id={courseId} />
                   </Tab.Panel>
-                  <Tab.Panel className="mt-5">
+                  <Tab.Panel className="mt-5 px-10">
                     {isTeacher() && (
                       <div className="flex justify-end">
                         <Link
@@ -119,6 +81,9 @@ function CourseDetail(props) {
                 </Tab.Panels>
               </Tab.Group>
             </div>
+          </div>
+          <div className="w-full lg:w-1/3 order-1 lg:order-2">
+            <CourseInfo id={courseId} full={false} />
           </div>
         </div>
       </div>

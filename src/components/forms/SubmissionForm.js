@@ -79,7 +79,7 @@ function SubmissionForm(props) {
                       <span>
                         <a
                           href={
-                            "http://127.0.0.1:8000/api/submission/download/" +
+                            "https://coursespec.000webhostapp.com/api/submission/download/" +
                             submissionInfo.submissionId
                           }
                           className="underline"

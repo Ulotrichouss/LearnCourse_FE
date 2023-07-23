@@ -8,11 +8,11 @@ function AssignmentCardMini(props) {
   const deadline = moment(props.data.deadline).format("YYYYMMDD");
   function genrateBorder() {
     if (isStudent()) {
-      if (today <= deadline && props.data.submission == '0') {
+      if (today <= deadline && props.data.submission == 0) {
         return "border-yellow-400";
-      } else if (today < deadline && props.data.submission == '1') {
+      } else if (today < deadline && props.data.submission == 1) {
         return "border-green-400";
-      } else if (today >= deadline && props.data.submission == '1') {
+      } else if (today >= deadline && props.data.submission == 1) {
         return "border-green-400";
       }
       return "border-red-400";
@@ -33,6 +33,7 @@ function AssignmentCardMini(props) {
       >
         <div className="w-full flex justify-between items-center">
           <div className="flex items-center">
+            <UserAvatar link={props.data.teacherAvatar} />
             <div>
               <span className="block text-lg text-gray-600 font-medium">
                 {props.data.assignmentTitle}

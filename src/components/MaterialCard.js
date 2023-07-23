@@ -24,7 +24,7 @@ function MaterialCard(props) {
                 <a
                   className="hover:underline"
                   href={
-                    "http://127.0.0.1:8000/api/material/download/" +
+                    "https://coursespec.000webhostapp.com/api/material/download/" +
                     props.data.materialId
                   }
                 >

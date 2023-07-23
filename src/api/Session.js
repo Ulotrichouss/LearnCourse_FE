@@ -31,15 +31,15 @@ export function removeUser() {
 }
 
 export function isStudent() {
-  return getUser().role == '0';
+  return getUser().role == 0;
 }
 export function isTeacher() {
-  return getUser().role == '1';
+  return getUser().role == 1;
 }
 export function isAdmin() {
-  return getUser().role == '2';
+  return getUser().role == 2;
 }
 
 export function checkActive() {
-  return getUser().status == '1';
+  return getUser().status == 1;
 }

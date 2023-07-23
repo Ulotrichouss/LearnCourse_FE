@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TrashIcon } from "@heroicons/react/outline";
-import { createCourse, getSkill } from "../../api/API_Courses";
+import { createCourse } from "../../api/API_Courses";
 import BackButton from "../buttons/BackButton";
 import { useHistory } from "react-router-dom";
 import ErrorText from "../ErrorText";
 import LoadingButton from "../buttons/LoadingButton";
-import Autocomplete from "../Autocomplete";
 function CreateCourseForm() {
   // States
   const history = useHistory();
@@ -13,7 +12,6 @@ function CreateCourseForm() {
     title: "",
     introduction: "",
   });
-  const [skill, setSkill] = useState([]);
   const [seletedImage, setSelectedImage] = useState([]);
   const [loading, setloading] = useState(false);
   const [errors, seterrors] = useState([]);
@@ -26,9 +24,6 @@ function CreateCourseForm() {
   function confirm() {
     createCourse(courseInfo, seletedImage, setloading, seterrors, history);
   }
-  useEffect(() => {
-    getSkill(setSkill);
-  }, []);
   // End Functions
   return (
     <div>
@@ -68,14 +63,6 @@ function CreateCourseForm() {
             ></textarea>
             {errors.introduction && <ErrorText text={errors.introduction} />}
           </div>
-          {/* <div className="grid grid-cols-1 gap-1">  
-            {/* <select className="p-2 bg-gray-100 border rounded-md" multiple>
-              {skill.length > 0 &&
-                skill.map((item, index) => {
-                  return <option key={index}>{item.skill}</option>;
-                })}
-            </select>
-            {errors.introduction && <ErrorText text={errors.introduction} />} */}
         </div>
       </div>
       <div className="pt-5 flex space-x-10">

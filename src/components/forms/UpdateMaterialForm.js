@@ -45,7 +45,7 @@ function UpdateMaterialForm(props) {
           You uploaded{" "}
           <a
             href={
-              "http://127.0.0.1:8000/api/material/download/" +
+              "https://coursespec.000webhostapp.com/api/material/download/" +
               materialInfor.materialId
             }
             className="hover:underline"

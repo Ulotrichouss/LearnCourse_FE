@@ -10,13 +10,15 @@ import Overview from "../components/Overview";
 function Home() {
   return (
     <div className="container m-auto mt-5">
+      <div class="flex flex-wrap space-x-5">
         <div className="flex-none px-5 lg:px-0 lg:flex-3">
-          <Greeting/>
+          <Greeting />
           {isAdmin() ? <Management /> : <RecentlyVisited />}
         </div>
         <div class="flex-none w-full px-5 lg:px-0 lg:flex-1 my-5 lg:my-0">
           {isAdmin() ? <Overview /> : <AssignmentListMini />}
         </div>
+      </div>
       <div className="my-5">{!isAdmin() && <NewCoursesList />}</div>
     </div>
   );

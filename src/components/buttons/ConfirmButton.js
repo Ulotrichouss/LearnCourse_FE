@@ -39,7 +39,7 @@ function ConfirmButton(props) {
         updateMaterial(props.id, props.data, props.file);
         break;
       case "update-profile":
-        updateProfile(props.data, props.file,history);
+        updateProfile(props.data, props.file, history);
         break;
       case "confirm-course":
         confirmCourse(props.id);
